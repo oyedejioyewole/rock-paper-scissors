@@ -19,18 +19,25 @@ const selectChoice = () => {
 
 <template>
   <section
-    class="flex justify-center uppercase text-xl gap-10 text-white items-center"
+    class="
+      flex
+      justify-center
+      uppercase
+      text-xl
+      gap-4
+      xl:gap-10
+      text-white
+      items-center
+      flex-wrap
+    "
   >
     <!-- Your choice -->
-    <div class="flex flex-col">
-      <h1 class="mb-5">You Picked</h1>
+    <div class="flex flex-col w-[40%] xl:w-auto items-center">
+      <h1 class="my-5">You Picked</h1>
       <div
-        class="rounded-full -z-10"
-        :style="
-          result === 'win'
-            ? `box-shadow: 0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)`
-            : ''
-        "
+        :class="`rounded-full -z-10 ${
+          result === 'win' ? 'xl:shadow-triple-rounded' : ''
+        }`"
       >
         <!-- Rock icon -->
         <div
@@ -223,7 +230,7 @@ const selectChoice = () => {
     </div>
 
     <!-- The result -->
-    <div v-if="!resultsLoading">
+    <div v-if="!resultsLoading" class="order-last xl:order-none">
       <h1 class="text-6xl">
         {{
           result === "win"
@@ -254,15 +261,21 @@ const selectChoice = () => {
     </div>
 
     <!-- The computer's choice -->
-    <div class="flex flex-col">
-      <h1 class="mb-5">The House Picked</h1>
+    <div
+      class="
+        flex flex-col
+        items-center
+        xl:order-last
+        w-[40%]
+        xl:w-auto
+        justify-center
+      "
+    >
+      <h1 class="my-5">The House Picked</h1>
       <div
-        class="rounded-full -z-10 w-fit"
-        :style="
-          result === 'lose'
-            ? `box-shadow: 0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)`
-            : ''
-        "
+        :class="`rounded-full -z-10 w-fit ${
+          result === 'lose' ? 'xl:shadow-triple-rounded' : ''
+        }`"
       >
         <!-- Scissors icon -->
         <div

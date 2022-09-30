@@ -29,10 +29,12 @@ const calculate = (option) => playboard.calculate(option);
         flex flex-wrap
         gap-36 gap-y-24
         mb-12
-        w-[30%]
+        w-[70%]
+        md:w-[55%]
+        xl:w-[30%]
         justify-center
         relative
-        mt-2
+        mt-8
       "
     >
       <!-- Paper button -->

@@ -27,13 +27,14 @@ const calculate = (option) => playboard.calculate(option);
     "
   >
     <!-- Options -->
-    <div class="flex flex-col relative items-center gap-4">
+    <div class="flex flex-col relative items-center xl:gap-4">
       <!-- Scissors button -->
       <button
         class="
           w-24
           h-24
-          mt-16
+          mt-8
+          xl:mt-16
           2xl:mt-0
           from-scissors-outline-one
           to-scissors-outline-two
@@ -68,7 +69,7 @@ const calculate = (option) => playboard.calculate(option);
         />
       </button>
 
-      <div class="flex flex-wrap w-[60%] gap-16 justify-between">
+      <div class="flex flex-wrap w-[60%] gap-10 justify-between">
         <!-- Spock button -->
         <button
           class="

@@ -4,24 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial":
-          "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
         "gradient-radial-at-t":
           "radial-gradient(ellipse at top, var(--tw-gradient-stops))",
-        "gradient-radial-at-b":
-          "radial-gradient(ellipse at bottom, var(--tw-gradient-stops))",
-        "gradient-radial-at-l":
-          "radial-gradient(ellipse at left, var(--tw-gradient-stops))",
-        "gradient-radial-at-r":
-          "radial-gradient(ellipse at right, var(--tw-gradient-stops))",
-        "gradient-radial-at-tl":
-          "radial-gradient(ellipse at top left, var(--tw-gradient-stops))",
-        "gradient-radial-at-tr":
-          "radial-gradient(ellipse at top right, var(--tw-gradient-stops))",
-        "gradient-radial-at-bl":
-          "radial-gradient(ellipse at bottom left, var(--tw-gradient-stops))",
-        "gradient-radial-at-br":
-          "radial-gradient(ellipse at bottom right, var(--tw-gradient-stops))",
       },
       fontFamily: {
         sans: "'Barlow Semi Condensed', sans-serif",
@@ -42,6 +26,10 @@ module.exports = {
         "lizard-outline-two": "hsl(261, 72%, 63%)",
         "spock-outline-one": "hsl(189, 59%, 53%)",
         "spock-outline-two": "hsl(189, 58%, 57%)",
+      },
+      boxShadow: {
+        "triple-rounded":
+          "0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)",
       },
     },
   },

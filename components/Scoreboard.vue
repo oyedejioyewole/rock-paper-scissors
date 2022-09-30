@@ -35,10 +35,13 @@ const toggleGameMode = () => {
       border-2
       rounded-2xl
       border-scoreboard-outline
-      w-full
+      xl:w-full
+      w-3/4
       items-center
       absolute
       top-0
+      left-1/2
+      -translate-x-1/2
     "
   >
     <NuxtLink to="/"
