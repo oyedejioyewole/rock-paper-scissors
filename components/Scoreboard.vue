@@ -10,6 +10,12 @@ const { score, showResults } = storeToRefs(usePlayboardStore());
 const toggleGameMode = () => {
   score.value = 0;
   useToggle(isBonus)();
+  if (window.localStorage) {
+    window.localStorage.setItem(
+      "gameMode",
+      isBonus.value ? "bonus" : "original"
+    );
+  }
   if (showResults.value) {
     showResults.value = false;
   }

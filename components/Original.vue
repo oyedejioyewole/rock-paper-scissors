@@ -3,6 +3,12 @@ import { usePlayboardStore } from "~/stores/playboard";
 
 const playboard = usePlayboardStore();
 
+playboard.$subscribe((mutation, state) => {
+  if (window.localStorage) {
+    window.localStorage.setItem("score", state.score);
+  }
+});
+
 const calculate = (option) => playboard.calculate(option);
 </script>
 

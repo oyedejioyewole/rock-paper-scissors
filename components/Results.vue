@@ -22,195 +22,203 @@ const selectChoice = () => {
     class="flex justify-center uppercase text-xl gap-10 text-white items-center"
   >
     <!-- Your choice -->
-    <div>
+    <div class="flex flex-col">
       <h1 class="mb-5">You Picked</h1>
-
-      <!-- Rock icon -->
       <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-rock-outline-one
-          to-rock-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
+        class="rounded-full -z-10"
+        :style="
+          result === 'win'
+            ? `box-shadow: 0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)`
+            : ''
         "
-        v-if="userChoice === 'Rock'"
       >
-        <NuxtImg
-          src="/images/icon-rock.svg"
+        <!-- Rock icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-rock-outline-one
+            to-rock-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
           "
-          alt="Rock"
-        />
-      </div>
+          v-if="userChoice === 'Rock'"
+        >
+          <NuxtImg
+            src="/images/icon-rock.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Rock"
+          />
+        </div>
 
-      <!-- Paper icon -->
-      <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-paper-outline-one
-          to-paper-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="userChoice === 'Paper'"
-      >
-        <NuxtImg
-          src="/images/icon-paper.svg"
+        <!-- Paper icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-paper-outline-one
+            to-paper-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
           "
-          alt="Paper"
-        />
-      </div>
+          v-else-if="userChoice === 'Paper'"
+        >
+          <NuxtImg
+            src="/images/icon-paper.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Paper"
+          />
+        </div>
 
-      <!-- Scissors icon -->
-      <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-scissors-outline-one
-          to-scissors-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="userChoice === 'Scissors'"
-      >
-        <NuxtImg
-          src="/images/icon-scissors.svg"
+        <!-- Scissors icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-scissors-outline-one
+            to-scissors-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
           "
-          alt="Scissors"
-        />
-      </div>
+          v-else-if="userChoice === 'Scissors'"
+        >
+          <NuxtImg
+            src="/images/icon-scissors.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Scissors"
+          />
+        </div>
 
-      <!-- Spock icon -->
-      <div
-        class="
-          w-24
-          h-24
-          from-spock-outline-one
-          to-spock-outline-two
-          bg-gradient-to-br
-          rounded-full
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="isBonus && userChoice === 'Spock'"
-      >
-        <NuxtImg
-          src="/images/icon-spock.svg"
+        <!-- Spock icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            w-24
+            h-24
+            from-spock-outline-one
+            to-spock-outline-two
+            bg-gradient-to-br
+            rounded-full
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
           "
-          alt="Spock"
-        />
-      </div>
+          v-else-if="isBonus && userChoice === 'Spock'"
+        >
+          <NuxtImg
+            src="/images/icon-spock.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Spock"
+          />
+        </div>
 
-      <!-- Lizard icon -->
-      <div
-        class="
-          w-24
-          h-24
-          from-lizard-outline-one
-          to-lizard-outline-two
-          bg-gradient-to-br
-          rounded-full
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="isBonus && userChoice === 'Lizard'"
-      >
-        <NuxtImg
-          src="/images/icon-lizard.svg"
+        <!-- Lizard icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            w-24
+            h-24
+            from-lizard-outline-one
+            to-lizard-outline-two
+            bg-gradient-to-br
+            rounded-full
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
           "
-          alt="Lizard"
-        />
+          v-else-if="isBonus && userChoice === 'Lizard'"
+        >
+          <NuxtImg
+            src="/images/icon-lizard.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Lizard"
+          />
+        </div>
       </div>
     </div>
 
@@ -246,198 +254,208 @@ const selectChoice = () => {
     </div>
 
     <!-- The computer's choice -->
-    <div>
+    <div class="flex flex-col">
       <h1 class="mb-5">The House Picked</h1>
-
-      <!-- Scissors icon -->
       <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-scissors-outline-one
-          to-scissors-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-          mx-auto
+        class="rounded-full -z-10 w-fit"
+        :style="
+          result === 'lose'
+            ? `box-shadow: 0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)`
+            : ''
         "
-        v-if="computerChoice === 'Scissors'"
       >
-        <NuxtImg
-          src="/images/icon-scissors.svg"
+        <!-- Scissors icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-scissors-outline-one
+            to-scissors-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
+            mx-auto
           "
-          alt="Scissors"
-        />
-      </div>
+          v-if="computerChoice === 'Scissors'"
+        >
+          <NuxtImg
+            src="/images/icon-scissors.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Scissors"
+          />
+        </div>
 
-      <!-- Paper icon -->
-      <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-paper-outline-one
-          to-paper-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-          mx-auto
-        "
-        v-if="computerChoice === 'Paper'"
-      >
-        <NuxtImg
-          src="/images/icon-paper.svg"
+        <!-- Paper icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-paper-outline-one
+            to-paper-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
+            mx-auto
           "
-          alt="Paper"
-        />
-      </div>
+          v-if="computerChoice === 'Paper'"
+        >
+          <NuxtImg
+            src="/images/icon-paper.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Paper"
+          />
+        </div>
 
-      <!-- Rock icon -->
-      <div
-        class="
-          rounded-full
-          order-3
-          w-24
-          h-24
-          from-rock-outline-one
-          to-rock-outline-two
-          bg-gradient-to-br
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-          mx-auto
-        "
-        v-if="computerChoice === 'Rock'"
-      >
-        <NuxtImg
-          src="/images/icon-rock.svg"
+        <!-- Rock icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            order-3
+            w-24
+            h-24
+            from-rock-outline-one
+            to-rock-outline-two
+            bg-gradient-to-br
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
+            mx-auto
           "
-          alt="Rock"
-        />
-      </div>
+          v-if="computerChoice === 'Rock'"
+        >
+          <NuxtImg
+            src="/images/icon-rock.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Rock"
+          />
+        </div>
 
-      <!-- Spock icon -->
-      <div
-        class="
-          w-24
-          h-24
-          from-spock-outline-one
-          to-spock-outline-two
-          bg-gradient-to-br
-          rounded-full
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="isBonus && computerChoice === 'Spock'"
-      >
-        <NuxtImg
-          src="/images/icon-spock.svg"
+        <!-- Spock icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            w-24
+            h-24
+            from-spock-outline-one
+            to-spock-outline-two
+            bg-gradient-to-br
+            rounded-full
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
+            mx-auto
           "
-          alt="Spock"
-        />
-      </div>
+          v-else-if="isBonus && computerChoice === 'Spock'"
+        >
+          <NuxtImg
+            src="/images/icon-spock.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Spock"
+          />
+        </div>
 
-      <!-- Lizard icon -->
-      <div
-        class="
-          w-24
-          h-24
-          from-lizard-outline-one
-          to-lizard-outline-two
-          bg-gradient-to-br
-          rounded-full
-          relative
-          before:bg-[#ddd]
-          before:w-16
-          before:h-16
-          before:content-['']
-          before:absolute
-          before:left-1/2
-          before:top-1/2
-          before:-translate-x-1/2
-          before:-translate-y-1/2
-          before:rounded-full
-          before:shadow-inner
-        "
-        v-else-if="isBonus && computerChoice === 'Lizard'"
-      >
-        <NuxtImg
-          src="/images/icon-lizard.svg"
+        <!-- Lizard icon -->
+        <div
           class="
-            w-8
-            absolute
-            left-1/2
-            top-1/2
-            -translate-x-1/2 -translate-y-1/2
+            w-24
+            h-24
+            from-lizard-outline-one
+            to-lizard-outline-two
+            bg-gradient-to-br
+            rounded-full
+            relative
+            before:bg-[#ddd]
+            before:w-16
+            before:h-16
+            before:content-['']
+            before:absolute
+            before:left-1/2
+            before:top-1/2
+            before:-translate-x-1/2
+            before:-translate-y-1/2
+            before:rounded-full
+            before:shadow-inner
+            mx-auto
           "
-          alt="Lizard"
-        />
+          v-else-if="isBonus && computerChoice === 'Lizard'"
+        >
+          <NuxtImg
+            src="/images/icon-lizard.svg"
+            class="
+              w-8
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2 -translate-y-1/2
+            "
+            alt="Lizard"
+          />
+        </div>
       </div>
     </div>
   </section>

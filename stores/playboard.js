@@ -101,11 +101,21 @@ export const usePlayboardStore = defineStore("playboard", () => {
       const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
       const item = choices[Math.floor(Math.random() * choices.length)];
       computerChoice.value = item;
-    } else if (!isBonus.value) {
+      return;
+    }
+    if (!isBonus.value) {
       const choices = ["Rock", "Paper", "Scissors"];
       const item = choices[Math.floor(Math.random() * choices.length)];
       computerChoice.value = item;
     }
+  }
+
+  /**
+   * Function to save attained score
+   * @param {Number} value
+   */
+  function saveScore(value) {
+    score.value = value;
   }
 
   // Everything to the components
@@ -117,5 +127,6 @@ export const usePlayboardStore = defineStore("playboard", () => {
     showResults,
     result,
     calculate,
+    saveScore,
   };
 });

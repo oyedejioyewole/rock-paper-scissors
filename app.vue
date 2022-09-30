@@ -1,4 +1,5 @@
 <script setup>
+import { useStorage } from "@vueuse/core";
 import { usePlayboardStore } from "./stores/playboard";
 import { useRootStore } from "./stores/root";
 
@@ -9,8 +10,30 @@ useHead({
   },
 });
 
-useRootStore();
-usePlayboardStore().selectChoice();
+// Store objects
+const _root = useRootStore();
+const playboard = usePlayboardStore();
+
+// LocalStorage store
+const savedScore = useStorage("score").value;
+const savedGameMode = useStorage("gameMode").value;
+
+// Use saved game mode if available
+if (savedGameMode) {
+  if (savedGameMode === "bonus") {
+    _root.setIsBonus(true);
+  } else if (savedGameMode === "original") {
+    _root.setIsBonus(false);
+  }
+}
+
+// Use saved score if available
+if (savedScore) {
+  playboard.saveScore(savedScore);
+}
+
+// Select option on page load
+playboard.selectChoice();
 </script>
 
 <template>
