@@ -69,7 +69,7 @@ const calculate = (option) => playboard.calculate(option);
         />
       </button>
 
-      <div class="flex flex-wrap w-[60%] gap-10 justify-between">
+      <div class="flex flex-wrap w-[65%] gap-10 justify-between">
         <!-- Spock button -->
         <button
           class="
