@@ -19,7 +19,8 @@ const savedScore = useStorage("score").value;
 const savedGameMode = useStorage("gameMode").value;
 
 // Use saved game mode if available
-if (savedGameMode) {
+if (savedGameMode !== "undefined") {
+  console.log("Debugging ...");
   if (savedGameMode === "bonus") {
     _root.setIsBonus(true);
   } else if (savedGameMode === "original") {
@@ -28,7 +29,7 @@ if (savedGameMode) {
 }
 
 // Use saved score if available
-if (savedScore) {
+if (savedScore !== "undefined") {
   playboard.saveScore(savedScore);
 }
 

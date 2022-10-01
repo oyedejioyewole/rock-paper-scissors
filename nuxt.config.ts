@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         href: "/images/favicon-32x32.png",
       },
       {
-        rel: "preload",
+        rel: "preconnect",
         href: "https://api.fonts.coollabs.io",
       },
       {
