@@ -4,11 +4,9 @@ import { usePlayboardStore } from "~/stores/playboard";
 const playboard = usePlayboardStore();
 
 playboard.$subscribe((mutation, state) => {
-  console.log({ mutation });
-  console.log({ state });
-  // if (window.localStorage && state.score !== "undefined") {
-  //   window.localStorage.setItem("score", state.score);
-  // }
+  if (window.localStorage) {
+    window.localStorage.setItem("score", state.score);
+  }
 });
 
 const calculate = (option) => playboard.calculate(option);
