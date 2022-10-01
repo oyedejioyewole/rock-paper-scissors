@@ -5,11 +5,16 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "@vueuse/nuxt",
     "@pinia/nuxt",
+    "@kevinmarrec/nuxt-pwa",
   ],
   ssr: false,
   meta: {
     title: "Rock, Paper, Scissors - OyewoleOyedeji",
     meta: [
+      {
+        name: "title",
+        content: "Rock, Paper, Scissors - OyewoleOyedeji",
+      },
       {
         name: "description",
         content:
