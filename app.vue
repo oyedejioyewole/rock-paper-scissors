@@ -1,5 +1,4 @@
 <script setup>
-import { useStorage } from "@vueuse/core";
 import { usePlayboardStore } from "./stores/playboard";
 import { useRootStore } from "./stores/root";
 
@@ -15,22 +14,27 @@ const _root = useRootStore();
 const playboard = usePlayboardStore();
 
 // LocalStorage store
-const savedScore = useStorage("score").value;
-const savedGameMode = useStorage("gameMode").value;
+const savedScore = localStorage.getItem("score");
+const savedGameMode = localStorage.getItem("gameMode");
 
-// Use saved game mode if available
-if (savedGameMode !== "undefined") {
-  console.log("Debugging ...");
+// Use saved game mode if not undefined
+if (savedGameMode) {
+  console.log("Value present");
   if (savedGameMode === "bonus") {
     _root.setIsBonus(true);
   } else if (savedGameMode === "original") {
     _root.setIsBonus(false);
   }
+} else {
+  localStorage.setItem("gameMode", "original");
 }
 
-// Use saved score if available
-if (savedScore !== "undefined") {
+// Use saved score if not undefined
+if (savedScore) {
+  console.log("Value present");
   playboard.saveScore(savedScore);
+} else {
+  localStorage.setItem("score", 0);
 }
 
 // Select option on page load
