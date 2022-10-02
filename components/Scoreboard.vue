@@ -30,7 +30,7 @@ const toggleGameMode = () => {
       mt-5
       2xl:mt-10
       p-2
-      px-5
+      md:px-5
       2xl:p-10
       border-2
       rounded-2xl

@@ -2,6 +2,11 @@
 import { usePlayboardStore } from "./stores/playboard";
 import { useRootStore } from "./stores/root";
 
+console.log("Thanks for visiting this site 🎊");
+console.log(
+  "View the code on https://github.com/OyewoleOyedeji/rock-paper-scissors"
+);
+
 useHead({
   bodyAttrs: {
     class:
@@ -22,7 +27,6 @@ const savedGameMode = localStorage.getItem("gameMode");
 
 // Use saved game mode if not undefined
 if (savedGameMode) {
-  console.log("Value present");
   if (savedGameMode === "bonus") {
     _root.setIsBonus(true);
   } else if (savedGameMode === "original") {
@@ -34,7 +38,6 @@ if (savedGameMode) {
 
 // Use saved score if not undefined
 if (savedScore) {
-  console.log("Value present");
   playboard.saveScore(savedScore);
 } else {
   localStorage.setItem("score", 0);

@@ -44,9 +44,6 @@ export default defineNuxtConfig({
         "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
       theme_color: "#182043",
     },
-    workbox: {
-      enabled: true,
-    },
     manifest: {
       name: "Rock, paper, scissors - OyewoleOyedeji",
       short_name: "Rock, paper, scissors",

@@ -26,6 +26,8 @@ const toggleGameMode = () => {
       xl:gap-0 xl:flex-row xl:justify-between
       items-center
       w-full
+      text-center
+      md:text-left
     "
   >
     <h1 class="text-md text-gray-400">
@@ -35,15 +37,18 @@ const toggleGameMode = () => {
         target="_blank"
         class="transition hover:text-white underline underline-offset-4"
         >Frontend Mentor</NuxtLink
-      >. Coded by
-      <NuxtLink
-        href="https://github.com/OyewoleOyedeji"
-        target="_blank"
-        class="transition hover:text-white underline underline-offset-4"
-        >OyewoleOyedeji</NuxtLink
+      ><span class="hidden md:inline-block">.&nbsp;</span>
+      <span class="block md:inline"
+        >Coded by
+        <NuxtLink
+          href="https://github.com/OyewoleOyedeji/rock-paper-scissors"
+          target="_blank"
+          class="transition hover:text-white underline underline-offset-4"
+          >OyewoleOyedeji</NuxtLink
+        ></span
       >
     </h1>
-    <div class="order-first xl:order-last flex gap-4">
+    <div class="order-first xl:order-last flex gap-4 mb-2 md:mb-0">
       <Rules />
       <button
         class="
