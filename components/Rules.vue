@@ -70,7 +70,7 @@ const toggleModal = useToggle(isOpen);
             <DialogPanel
               class="
                 w-full
-                max-w-md
+                md:max-w-md
                 transform
                 overflow-hidden
                 rounded-2xl
@@ -80,6 +80,11 @@ const toggleModal = useToggle(isOpen);
                 align-middle
                 shadow-xl
                 transition-all
+                h-[95vh]
+                max-h-min
+                md:h-auto
+                flex flex-col
+                justify-center
               "
             >
               <DialogTitle
@@ -90,25 +95,28 @@ const toggleModal = useToggle(isOpen);
                   leading-6
                   text-dark
                   uppercase
-                  flex
+                  flex flex-col
+                  md:flex-row
                   items-center
                   justify-between
                 "
               >
                 Rules
-                <i
-                  class="
-                    las
-                    la-times
-                    cursor-pointer
-                    transition
-                    hover:opacity-50
-                  "
-                  @click="toggleModal(false)"
-                  title="Close this modal"
-                ></i>
+                <span class="hidden md:block">
+                  <i
+                    class="
+                      las
+                      la-times
+                      cursor-pointer
+                      transition
+                      hover:opacity-50
+                    "
+                    @click="toggleModal(false)"
+                    title="Close this modal"
+                  ></i>
+                </span>
               </DialogTitle>
-              <div class="my-4">
+              <div class="my-4 gap-y-14 flex flex-col items-center">
                 <NuxtImg
                   :src="
                     !isBonus
@@ -118,6 +126,20 @@ const toggleModal = useToggle(isOpen);
                   class="mx-auto pt-10"
                   alt="The rules of the game"
                 />
+                <i
+                  class="
+                    las
+                    la-times
+                    cursor-pointer
+                    transition
+                    hover:opacity-50
+                    text-4xl
+                    block
+                    md:hidden
+                  "
+                  @click="toggleModal(false)"
+                  title="Close this modal"
+                ></i>
               </div>
             </DialogPanel>
           </TransitionChild>
