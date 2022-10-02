@@ -126,20 +126,20 @@ const toggleModal = useToggle(isOpen);
                   class="mx-auto pt-10"
                   alt="The rules of the game"
                 />
-                <i
-                  class="
-                    las
-                    la-times
-                    cursor-pointer
-                    transition
-                    hover:opacity-50
-                    text-4xl
-                    block
-                    md:hidden
-                  "
-                  @click="toggleModal(false)"
-                  title="Close this modal"
-                ></i>
+                <span class="block md:hidden">
+                  <i
+                    class="
+                      las
+                      la-times
+                      cursor-pointer
+                      transition
+                      hover:opacity-50
+                      text-4xl
+                    "
+                    @click="toggleModal(false)"
+                    title="Close this modal"
+                  ></i>
+                </span>
               </div>
             </DialogPanel>
           </TransitionChild>
