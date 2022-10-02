@@ -8,10 +8,11 @@ const { computerChoice, userChoice, result, showResults } = storeToRefs(
 );
 
 const { isBonus } = storeToRefs(useRootStore());
-const resultsLoading = useState("resultsLoading", () => false);
+const resultsLoading = useState("resultsLoading", () => true);
 
 const selectChoice = () => {
   usePlayboardStore().selectChoice();
+  resultsLoading.value = true;
   showResults.value = false;
   result.value = null;
 };
@@ -36,7 +37,7 @@ const selectChoice = () => {
       <h1 class="my-5">You Picked</h1>
       <div
         :class="`rounded-full -z-10 ${
-          result === 'win' ? 'xl:shadow-triple-rounded' : ''
+          result === 'win' && !resultsLoading ? 'xl:shadow-triple-rounded' : ''
         }`"
       >
         <!-- Rock icon -->
@@ -276,6 +277,7 @@ const selectChoice = () => {
         :class="`rounded-full -z-10 w-fit ${
           result === 'lose' ? 'xl:shadow-triple-rounded' : ''
         }`"
+        v-if="!resultsLoading"
       >
         <!-- Scissors icon -->
         <div
@@ -470,6 +472,24 @@ const selectChoice = () => {
           />
         </div>
       </div>
+      <div
+        v-else
+        class="rounded-full w-24 h-24 bg-black opacity-60 animate-pulse"
+      ></div>
     </div>
   </section>
 </template>
+
+<script>
+import { promiseTimeout } from "@vueuse/core";
+export default {
+  async mounted() {
+    const areResultsLoading = useState("resultsLoading");
+
+    const ready = useTimeout(4800);
+    await promiseTimeout(5000);
+
+    areResultsLoading.value = false;
+  },
+};
+</script>
