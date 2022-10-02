@@ -33,7 +33,6 @@ export const usePlayboardStore = defineStore("playboard", () => {
     userChoice.value = option;
     if (option === computerChoice.value) {
       result.value = "draw";
-      console.log("You drew");
     } else if (
       (option === "Rock" && computerChoice.value === "Paper") ||
       (option === "Paper" && computerChoice.value === "Scissors") ||
@@ -59,8 +58,6 @@ export const usePlayboardStore = defineStore("playboard", () => {
       (isBonus.value && option === "Spock" && computerChoice.value === "Paper")
     ) {
       result.value = "lose";
-      score.value--;
-      console.log("You lost");
     } else if (
       (option === "Paper" && computerChoice.value === "Rock") ||
       (option === "Scissors" && computerChoice.value === "Paper") ||
@@ -86,8 +83,6 @@ export const usePlayboardStore = defineStore("playboard", () => {
       (isBonus.value && option === "Paper" && computerChoice.value === "Spock")
     ) {
       result.value = "win";
-      score.value++;
-      console.log("You won");
     }
     showResults.value = true;
   }
