@@ -479,12 +479,20 @@ const selectChoice = () => {
 
 <script>
 import { promiseTimeout } from "@vueuse/core";
+
 export default {
   async mounted() {
+    const playboard = usePlayboardStore();
     const areResultsLoading = useState("resultsLoading");
 
     useTimeout(4800);
     await promiseTimeout(5000);
+
+    if (playboard.result === "win") {
+      playboard.score++;
+    } else {
+      playboard.score--;
+    }
 
     areResultsLoading.value = false;
   },
