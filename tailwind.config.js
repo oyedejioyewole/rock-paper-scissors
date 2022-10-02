@@ -30,6 +30,8 @@ module.exports = {
       boxShadow: {
         "triple-rounded":
           "0 0 0 75px hsl(214deg 47% 23% / 80%), 0 0 0 150px hsl(214deg 47% 23% / 60%), 0 0 0 225px hsl(214deg 47% 23% / 40%)",
+        "triple-rounded-trimmed":
+          "0 0 0 50px hsl(214deg 47% 23% / 80%), 0 0 0 90px hsl(214deg 47% 23% / 60%), 0 0 0 150px hsl(214deg 47% 23% / 40%)",
       },
     },
   },

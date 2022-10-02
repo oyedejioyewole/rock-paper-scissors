@@ -36,8 +36,10 @@ const selectChoice = () => {
     <div class="flex flex-col w-[40%] xl:w-auto items-center">
       <h1 class="my-5">You Picked</h1>
       <div
-        :class="`rounded-full -z-10 ${
-          result === 'win' && !resultsLoading ? 'xl:shadow-triple-rounded' : ''
+        :class="`rounded-full ${
+          result === 'win' && !resultsLoading
+            ? 'shadow-triple-rounded-trimmed xl:shadow-triple-rounded -z-20'
+            : '-z-10'
         }`"
       >
         <!-- Rock icon -->
@@ -274,8 +276,10 @@ const selectChoice = () => {
     >
       <h1 class="my-5">The House Picked</h1>
       <div
-        :class="`rounded-full -z-10 w-fit ${
-          result === 'lose' ? 'xl:shadow-triple-rounded' : ''
+        :class="`rounded-full -z-20 w-fit ${
+          result === 'lose'
+            ? 'shadow-triple-rounded-trimmed xl:shadow-triple-rounded'
+            : ''
         }`"
         v-if="!resultsLoading"
       >
