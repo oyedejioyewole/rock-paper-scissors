@@ -1,7 +1,5 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
-const _title = "Rock, Paper, Scissors - OyewoleOyedeji";
-
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
@@ -12,7 +10,7 @@ export default defineNuxtConfig({
   ],
   ssr: false,
   meta: {
-    title: _title,
+    title: "Home",
     link: [
       {
         rel: "icon",
@@ -41,13 +39,19 @@ export default defineNuxtConfig({
   },
   pwa: {
     meta: {
-      name: _title,
+      name: "Home",
       description:
         "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
       theme_color: "#182043",
     },
     workbox: {
       enabled: true,
+    },
+    manifest: {
+      name: "Rock, paper, scissors - OyewoleOyedeji",
+      short_name: "Rock, paper, scissors",
+      description:
+        "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
     },
   },
 });
