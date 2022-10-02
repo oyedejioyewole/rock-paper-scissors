@@ -3,7 +3,6 @@ import { usePlayboardStore } from "./stores/playboard";
 import { useRootStore } from "./stores/root";
 
 useHead({
-  title: "Rock, Paper, Scissors - OyewoleOyedeji",
   bodyAttrs: {
     class:
       "flex flex-col bg-gradient-radial-at-t from-gradient-one to-gradient-two bg-no-repeat h-screen justify-center container mx-auto relative",

@@ -1,4 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+
+const _title = "Rock, Paper, Scissors - OyewoleOyedeji";
+
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
@@ -9,24 +12,13 @@ export default defineNuxtConfig({
   ],
   ssr: false,
   meta: {
-    title: "Rock, Paper, Scissors - OyewoleOyedeji",
-    meta: [
-      {
-        name: "title",
-        content: "Rock, Paper, Scissors - OyewoleOyedeji",
-      },
-      {
-        name: "description",
-        content:
-          "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
-      },
-    ],
+    title: _title,
     link: [
       {
         rel: "icon",
-        type: "image/png",
+        type: "image/svg+xml",
         sizes: "32x32",
-        href: "/images/favicon-32x32.png",
+        href: "/images/favicon.svg",
       },
       {
         rel: "preconnect",
@@ -46,5 +38,16 @@ export default defineNuxtConfig({
         href: "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css",
       },
     ],
+  },
+  pwa: {
+    meta: {
+      name: _title,
+      description:
+        "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
+      theme_color: "#182043",
+    },
+    workbox: {
+      enabled: true,
+    },
   },
 });
