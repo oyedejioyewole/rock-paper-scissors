@@ -63,8 +63,8 @@ Not sure what Rock, Paper, Scissors, Lizard, Spock is? [Check out this clip from
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/rock-paper-scissors-made-using-tailwindcss-and-vue-3-xg3J4fiNER)
+- [Live Site URL](https://rock-paper-scissors-drab.vercel.app)
 
 ## My process
 
