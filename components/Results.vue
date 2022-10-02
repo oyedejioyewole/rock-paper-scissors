@@ -472,10 +472,7 @@ const selectChoice = () => {
           />
         </div>
       </div>
-      <div
-        v-else
-        class="rounded-full w-24 h-24 bg-black opacity-60 animate-pulse"
-      ></div>
+      <div v-else class="rounded-full w-24 h-24 bg-[#ddd] animate-pulse"></div>
     </div>
   </section>
 </template>
