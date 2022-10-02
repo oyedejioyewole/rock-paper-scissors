@@ -486,7 +486,7 @@ export default {
   async mounted() {
     const areResultsLoading = useState("resultsLoading");
 
-    const ready = useTimeout(4800);
+    useTimeout(4800);
     await promiseTimeout(5000);
 
     areResultsLoading.value = false;
