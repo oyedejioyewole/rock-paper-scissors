@@ -7,6 +7,12 @@ import { storeToRefs } from "pinia";
 const { isBonus } = storeToRefs(useRootStore());
 const { score, showResults } = storeToRefs(usePlayboardStore());
 
+usePlayboardStore().$subscribe((mutation, state) => {
+  if (window.localStorage) {
+    window.localStorage.setItem("score", state.score);
+  }
+});
+
 const toggleGameMode = () => {
   score.value = 0;
   useToggle(isBonus)();

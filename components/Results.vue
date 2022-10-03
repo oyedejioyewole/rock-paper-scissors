@@ -10,8 +10,15 @@ const { computerChoice, userChoice, result, showResults } = storeToRefs(
 const { isBonus } = storeToRefs(useRootStore());
 const resultsLoading = useState("resultsLoading", () => true);
 
+usePlayboardStore().$subscribe((mutation, state) => {
+  if (window.localStorage) {
+    window.localStorage.setItem("score", state.score);
+  }
+});
+
 const selectChoice = () => {
   usePlayboardStore().selectChoice();
+  userChoice.value = "";
   resultsLoading.value = true;
   showResults.value = false;
   result.value = null;
@@ -476,7 +483,10 @@ const selectChoice = () => {
           />
         </div>
       </div>
-      <div v-else class="rounded-full w-24 h-24 bg-[#ddd] animate-pulse"></div>
+      <div
+        v-else
+        class="rounded-full w-24 h-24 bg-gradient-two animate-pulse"
+      ></div>
     </div>
   </section>
 </template>
@@ -494,7 +504,7 @@ export default {
 
     if (playboard.result === "win") {
       playboard.score++;
-    } else {
+    } else if (playboard.result === "lose") {
       playboard.score--;
     }
 
