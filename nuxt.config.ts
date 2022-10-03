@@ -9,33 +9,35 @@ export default defineNuxtConfig({
     "@kevinmarrec/nuxt-pwa",
   ],
   ssr: false,
-  meta: {
-    title: "Home",
-    link: [
-      {
-        rel: "icon",
-        type: "image/svg+xml",
-        sizes: "32x32",
-        href: "/images/favicon.svg",
-      },
-      {
-        rel: "preconnect",
-        href: "https://api.fonts.coollabs.io",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossorigin: true,
-      },
-      {
-        rel: "stylesheet",
-        href: "https://api.fonts.coollabs.io/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css",
-      },
-    ],
+  app: {
+    head: {
+      title: "Home",
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          sizes: "32x32",
+          href: "/images/favicon.svg",
+        },
+        {
+          rel: "preconnect",
+          href: "https://api.fonts.coollabs.io",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: true,
+        },
+        {
+          rel: "stylesheet",
+          href: "https://api.fonts.coollabs.io/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css",
+        },
+      ],
+    },
   },
   pwa: {
     meta: {
