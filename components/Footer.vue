@@ -20,6 +20,7 @@ const toggleGameMode = () => {
     class="
       absolute
       bottom-3
+      md:bottom-20
       xl:bottom-4
       flex flex-col
       gap-4

@@ -281,7 +281,7 @@ const selectChoice = () => {
         justify-center
       "
     >
-      <h1 class="my-5">The House Picked</h1>
+      <h1 class="my-5 text-center">The House Picked</h1>
       <div
         :class="`rounded-full -z-20 w-fit ${
           result === 'lose'
