@@ -354,10 +354,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@kevinmarrec/nuxt-pwa@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.8.0.tgz#8e9d18ef520c9f99d9f3b42f080671ea1a5da95f"
-  integrity sha512-7xpOmfMmn3EudLHuFhUgV5gXs+09UQA44oCNXMTdyLifig72hx+sxGFmH1buoRZCJ6DSREYiNwFRSWPRBaoWCA==
+"@kevinmarrec/nuxt-pwa@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.9.1.tgz#c52f2e51f6c752ced9df30d050ea96df3ecbe66b"
+  integrity sha512-xrRn2ACFrr1KmN6HbdQmL6xUQXD8anAs4kd69teK7iNIECMLdCzQEu23GYBGG2uadgxdilynCZjwfwLzRYrdrg==
   dependencies:
     hasha "^5.2.2"
     sharp "^0.31.1"
@@ -4634,12 +4634,7 @@ statuses@2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
-std-env@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.2.1.tgz#00e260ec3901333537125f81282b9296b00d7304"
-  integrity sha512-D/uYFWkI/31OrnKmXZqGAGK5GbQRPp/BWA1nuITcc6ICblhhuQUPHS5E2GSCVS7Hwhf4ciq8qsATwBUxv+lI6w==
-
-std-env@^3.3.0:
+std-env@^3.2.1, std-env@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.3.0.tgz#86b5b5d416c5744b3fdeac6893c2b98196fc1a55"
   integrity sha512-cNNS+VYsXIs5gI6gJipO4qZ8YYT274JHvNnQ1/R/x8Q8mdP0qj0zoMchRXmBNPqp/0eOEhX+3g7g6Fgb7meLIQ==
