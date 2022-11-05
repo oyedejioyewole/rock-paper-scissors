@@ -37,36 +37,6 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://api.fonts.coollabs.io/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap",
         },
-        {
-          rel: "preload",
-          href: "/images/bg-triangle.svg",
-          as: "image",
-        },
-        {
-          rel: "preload",
-          href: "/images/icon-paper.svg",
-          as: "image",
-        },
-        {
-          rel: "preload",
-          href: "/images/icon-rock.svg",
-          as: "image",
-        },
-        {
-          rel: "preload",
-          href: "/images/icon-scissors.svg",
-          as: "image",
-        },
-        {
-          rel: "preload",
-          href: "/images/icon-lizard.svg",
-          as: "image",
-        },
-        {
-          rel: "preload",
-          href: "/images/icon-spock.svg",
-          as: "image",
-        },
       ],
       htmlAttrs: {
         lang: "en",
@@ -82,9 +52,6 @@ export default defineNuxtConfig({
       short_name: "Rock, paper, scissors",
       description:
         "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
-    },
-    icon: {
-      fileName: "favicon.svg",
     },
   },
 });
