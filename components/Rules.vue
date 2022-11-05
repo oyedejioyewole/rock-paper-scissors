@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {
   Dialog,
   DialogPanel,
@@ -37,7 +37,7 @@ const toggleModal = () => useToggle(isOpen)();
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog
       as="div"
-      @close="toggleModal(false)"
+      @close="toggleModal()"
       class="relative z-10"
       title="Close this modal"
     >
@@ -102,17 +102,12 @@ const toggleModal = () => useToggle(isOpen)();
               >
                 Rules
                 <span class="hidden md:block">
-                  <i
-                    class="
-                      las
-                      la-times
-                      cursor-pointer
-                      transition
-                      hover:opacity-50
-                    "
-                    @click="toggleModal(false)"
+                  <NuxtImg
+                    src="/images/icon-close.svg"
+                    class="cursor-pointer transition hover:opacity-50 w-6 h-6"
+                    @click="toggleModal()"
                     title="Close this modal"
-                  ></i>
+                  />
                 </span>
               </DialogTitle>
               <div class="my-4 gap-y-14 flex flex-col items-center">
@@ -126,18 +121,12 @@ const toggleModal = () => useToggle(isOpen)();
                   alt="The rules of the game"
                 />
                 <span class="block md:hidden">
-                  <i
-                    class="
-                      las
-                      la-times
-                      cursor-pointer
-                      transition
-                      hover:opacity-50
-                      text-4xl
-                    "
-                    @click="toggleModal(false)"
-                    title="Close this modal"
-                  ></i>
+                  <NuxtImg
+                    src="/images/icon-close.svg"
+                    alt="Close"
+                    class="cursor-pointer transition hover:opacity-50 w-6 h-6"
+                    @click="toggleModal()"
+                  />
                 </span>
               </div>
             </DialogPanel>

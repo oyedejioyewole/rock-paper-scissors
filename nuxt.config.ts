@@ -57,6 +57,16 @@ export default defineNuxtConfig({
           href: "/images/icon-scissors.svg",
           as: "image",
         },
+        {
+          rel: "preload",
+          href: "/images/icon-lizard.svg",
+          as: "image",
+        },
+        {
+          rel: "preload",
+          href: "/images/icon-spock.svg",
+          as: "image",
+        },
       ],
       htmlAttrs: {
         lang: "en",
