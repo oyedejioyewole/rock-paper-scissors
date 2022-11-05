@@ -60,6 +60,7 @@ const calculate = (option: string) => playboard.calculate(option);
             -translate-x-1/2 -translate-y-1/2
           "
           alt="Scissors"
+          preload
         />
       </button>
 
@@ -100,6 +101,7 @@ const calculate = (option: string) => playboard.calculate(option);
               -translate-x-1/2 -translate-y-1/2
             "
             alt="Spock"
+            preload
           />
         </button>
 
@@ -139,6 +141,7 @@ const calculate = (option: string) => playboard.calculate(option);
               -translate-x-1/2 -translate-y-1/2
             "
             alt="Paper"
+            preload
           />
         </button>
 
@@ -177,6 +180,7 @@ const calculate = (option: string) => playboard.calculate(option);
               -translate-x-1/2 -translate-y-1/2
             "
             alt="Lizard"
+            preload
           />
         </button>
 
@@ -215,6 +219,7 @@ const calculate = (option: string) => playboard.calculate(option);
               -translate-x-1/2 -translate-y-1/2
             "
             alt="Rock"
+            preload
           />
         </button>
       </div>
