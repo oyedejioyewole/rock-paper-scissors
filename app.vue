@@ -12,9 +12,6 @@ useHead({
     class:
       "flex flex-col bg-gradient-radial-at-t from-gradient-one to-gradient-two bg-no-repeat h-screen justify-center container mx-auto relative",
   },
-  htmlAttrs: {
-    lang: "en",
-  },
 });
 
 // Store objects

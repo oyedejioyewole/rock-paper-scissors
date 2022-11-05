@@ -1,5 +1,3 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
-
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
@@ -11,7 +9,14 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
-      title: "Home",
+      title: "Rock, paper, scissors - OyedejiOyewole",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
+        },
+      ],
       link: [
         {
           rel: "icon",
@@ -26,24 +31,40 @@ export default defineNuxtConfig({
         {
           rel: "preconnect",
           href: "https://fonts.gstatic.com",
-          crossorigin: true,
+          crossorigin: "anonymous",
         },
         {
           rel: "stylesheet",
           href: "https://api.fonts.coollabs.io/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap",
         },
         {
-          rel: "stylesheet",
-          href: "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css",
+          rel: "preload",
+          href: "/images/bg-triangle.svg",
+          as: "image",
+        },
+        {
+          rel: "preload",
+          href: "/images/icon-paper.svg",
+          as: "image",
+        },
+        {
+          rel: "preload",
+          href: "/images/icon-rock.svg",
+          as: "image",
+        },
+        {
+          rel: "preload",
+          href: "/images/icon-scissors.svg",
+          as: "image",
         },
       ],
+      htmlAttrs: {
+        lang: "en",
+      },
     },
   },
   pwa: {
     meta: {
-      name: "Home",
-      description:
-        "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
       theme_color: "#182043",
     },
     manifest: {
@@ -51,6 +72,9 @@ export default defineNuxtConfig({
       short_name: "Rock, paper, scissors",
       description:
         "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
+    },
+    icon: {
+      fileName: "favicon.svg",
     },
   },
 });
