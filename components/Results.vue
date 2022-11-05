@@ -1,28 +1,45 @@
-<script setup>
+<script setup lang="ts">
 import { useRootStore } from "~/stores/root";
 import { usePlayboardStore } from "~/stores/playboard";
 import { storeToRefs } from "pinia";
+import { promiseTimeout } from "@vueuse/core";
 
-const { computerChoice, userChoice, result, showResults } = storeToRefs(
+const { computerChoice, userChoice, result, showResults, score } = storeToRefs(
   usePlayboardStore()
 );
+
+const playboard = usePlayboardStore();
 
 const { isBonus } = storeToRefs(useRootStore());
 const resultsLoading = useState("resultsLoading", () => true);
 
-usePlayboardStore().$subscribe((mutation, state) => {
+playboard.$subscribe((mutation, state) => {
   if (window.localStorage) {
-    window.localStorage.setItem("score", state.score);
+    window.localStorage.setItem("score", JSON.stringify(state.score));
   }
 });
 
 const selectChoice = () => {
-  usePlayboardStore().selectChoice();
+  playboard.selectChoice();
   userChoice.value = "";
   resultsLoading.value = true;
   showResults.value = false;
-  result.value = null;
+  result.value = "";
 };
+
+onMounted(async () => {
+  const areResultsLoading = useState<boolean>("resultsLoading");
+
+  await promiseTimeout(5000);
+
+  if (result.value === "win") {
+    score.value++;
+  } else if (result.value === "lose") {
+    score.value--;
+  }
+
+  areResultsLoading.value = false;
+});
 </script>
 
 <template>
@@ -490,25 +507,3 @@ const selectChoice = () => {
     </div>
   </section>
 </template>
-
-<script>
-import { promiseTimeout } from "@vueuse/core";
-
-export default {
-  async mounted() {
-    const playboard = usePlayboardStore();
-    const areResultsLoading = useState("resultsLoading");
-
-    useTimeout(4800);
-    await promiseTimeout(5000);
-
-    if (playboard.result === "win") {
-      playboard.score++;
-    } else if (playboard.result === "lose") {
-      playboard.score--;
-    }
-
-    areResultsLoading.value = false;
-  },
-};
-</script>

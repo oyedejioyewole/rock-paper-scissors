@@ -6,13 +6,12 @@ import {
   TransitionRoot,
   TransitionChild,
 } from "@headlessui/vue";
-import { useToggle } from "@vueuse/core";
 import { useRootStore } from "~/stores/root";
 import { storeToRefs } from "pinia";
 
 const { isBonus } = storeToRefs(useRootStore());
 const isOpen = useState("isOpen", () => false);
-const toggleModal = useToggle(isOpen);
+const toggleModal = () => useToggle(isOpen)();
 </script>
 
 <template>

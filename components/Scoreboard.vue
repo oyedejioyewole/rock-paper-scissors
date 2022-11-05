@@ -1,5 +1,4 @@
-<script setup>
-import { useToggle } from "@vueuse/core";
+<script setup lang="ts">
 import { usePlayboardStore } from "~/stores/playboard";
 import { useRootStore } from "~/stores/root";
 import { storeToRefs } from "pinia";
@@ -9,7 +8,7 @@ const { score, showResults } = storeToRefs(usePlayboardStore());
 
 usePlayboardStore().$subscribe((mutation, state) => {
   if (window.localStorage) {
-    window.localStorage.setItem("score", state.score);
+    window.localStorage.setItem("score", JSON.stringify(state.score));
   }
 });
 

@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useToggle } from "@vueuse/core";
 
 export const useRootStore = defineStore("root", () => {
   const isBonus = ref(false);
@@ -8,7 +7,7 @@ export const useRootStore = defineStore("root", () => {
    * Function to set the game mode between original and bonus versions
    * @param {Boolean} option
    */
-  function setIsBonus(option) {
+  function setIsBonus(option: boolean) {
     isBonus.value = option;
   }
 

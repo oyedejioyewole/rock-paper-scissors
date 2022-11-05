@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { usePlayboardStore } from "~/stores/playboard";
 
 const playboard = usePlayboardStore();
 
-const calculate = (option) => playboard.calculate(option);
+const calculate = (option: string) => playboard.calculate(option);
 </script>
 
 <template>

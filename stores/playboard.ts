@@ -9,7 +9,7 @@ export const usePlayboardStore = defineStore("playboard", () => {
   const score = ref(0);
   const computerChoice = ref("");
   const showResults = ref(false);
-  const result = ref(null);
+  const result = ref("");
   const userChoice = ref("");
 
   /**
@@ -29,7 +29,7 @@ export const usePlayboardStore = defineStore("playboard", () => {
    * 9. Spock beats rock
    * 10. Lizard beats paper
    */
-  function calculate(option) {
+  function calculate(option: string) {
     userChoice.value = option;
     if (option === computerChoice.value) {
       result.value = "draw";
@@ -109,7 +109,7 @@ export const usePlayboardStore = defineStore("playboard", () => {
    * Function to save attained score
    * @param {Number} value
    */
-  function saveScore(value) {
+  function saveScore(value: number) {
     score.value = value;
   }
 
