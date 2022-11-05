@@ -22,7 +22,7 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/svg+xml",
           sizes: "32x32",
-          href: "/images/favicon.svg",
+          href: "/favicon.svg",
         },
         {
           rel: "preconnect",
