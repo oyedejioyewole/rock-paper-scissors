@@ -53,5 +53,8 @@ export default defineNuxtConfig({
       description:
         "Frontend Mentor - Rock, paper, scissors challenge solved by OyewoleOyedeji",
     },
+    icon: {
+      fileName: "favicon.svg",
+    },
   },
 });
