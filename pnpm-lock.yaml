@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/vue': ^1.7.4
-  '@kevinmarrec/nuxt-pwa': ^0.14.0
+  '@kevinmarrec/nuxt-pwa': ^0.15.0
   '@nuxt/image-edge': ^1.0.0-27769790.4b27db3
   '@nuxtjs/tailwindcss': ^6.1.3
   '@pinia/nuxt': ^0.4.3
@@ -15,7 +15,7 @@ dependencies:
   '@pinia/nuxt': 0.4.3
 
 devDependencies:
-  '@kevinmarrec/nuxt-pwa': 0.14.0
+  '@kevinmarrec/nuxt-pwa': 0.15.0
   '@nuxt/image-edge': 1.0.0-27769790.4b27db3
   '@nuxtjs/tailwindcss': 6.1.3
   '@vueuse/core': 9.4.0
@@ -383,8 +383,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  /@kevinmarrec/nuxt-pwa/0.14.0:
-    resolution: {integrity: sha512-60YWkyFAgCZVl9BKwC5aKEv7l5s/SuGIP4jf1o4uiE1B5Mxpm4n5HFPmDdirMn+RX+Xe4LFjdB2vuxxcUt3fFw==}
+  /@kevinmarrec/nuxt-pwa/0.15.0:
+    resolution: {integrity: sha512-7aEX3k123gq15859pHLnZZgSGSsTnH1BduK4sICktnkOJK6u62Uo0TT85ma9m5OOC27RJuCo/G8nBWEa39dD+g==}
     dependencies:
       hasha: 5.2.2
       sharp: 0.31.3
