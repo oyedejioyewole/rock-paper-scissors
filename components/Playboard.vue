@@ -1,10 +1,8 @@
-<script setup>
-import { useRootStore } from "~/stores/root";
-import { usePlayboardStore } from "~/stores/playboard";
+<script setup lang="ts">
+import usePlayboardStore from "~/store/playboard";
 import { storeToRefs } from "pinia";
 
-const { isBonus } = storeToRefs(useRootStore());
-const { showResults } = storeToRefs(usePlayboardStore());
+const { showResults, isBonus } = storeToRefs(usePlayboardStore());
 </script>
 
 <template>

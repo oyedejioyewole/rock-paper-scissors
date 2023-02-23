@@ -6,35 +6,25 @@ import {
   TransitionRoot,
   TransitionChild,
 } from "@headlessui/vue";
-import { useRootStore } from "~/stores/root";
+import useRootStore from "~/store/playboard";
 import { storeToRefs } from "pinia";
 
+//==> Methods
+const toggleModal = () => useToggle(isModalOpen)();
+
+const isModalOpen = useState("isRuleModalOpen", () => false);
 const { isBonus } = storeToRefs(useRootStore());
-const isOpen = useState("isOpen", () => false);
-const toggleModal = () => useToggle(isOpen)();
 </script>
 
 <template>
   <button
     type="button"
     @click="toggleModal()"
-    class="
-      rounded-md
-      px-8
-      py-2
-      text-sm
-      font-medium
-      text-white
-      hover:bg-scoreboard-outline hover:text-black
-      transition
-      focus-visible:ring-white
-      border-2 border-scoreboard-outline
-      uppercase
-    "
+    class="rounded-md px-8 py-2 text-sm font-medium text-white hover:bg-scoreboard-outline hover:text-black transition focus-visible:ring-white border-2 border-scoreboard-outline uppercase"
   >
     Rules
   </button>
-  <TransitionRoot appear :show="isOpen" as="template">
+  <TransitionRoot appear :show="isModalOpen" as="template">
     <Dialog
       as="div"
       @close="toggleModal()"
@@ -67,38 +57,11 @@ const toggleModal = () => useToggle(isOpen)();
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="
-                w-full
-                md:max-w-md
-                transform
-                overflow-hidden
-                rounded-2xl
-                bg-white
-                p-6
-                text-left
-                align-middle
-                shadow-xl
-                transition-all
-                h-[95vh]
-                max-h-min
-                md:h-auto
-                flex flex-col
-                justify-center
-              "
+              class="w-full md:max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all h-[95vh] max-h-min md:h-auto flex flex-col justify-center"
             >
               <DialogTitle
                 as="h3"
-                class="
-                  text-4xl
-                  font-medium
-                  leading-6
-                  text-dark
-                  uppercase
-                  flex flex-col
-                  md:flex-row
-                  items-center
-                  justify-between
-                "
+                class="text-4xl font-medium leading-6 text-dark uppercase flex flex-col md:flex-row items-center justify-between"
               >
                 Rules
                 <span class="hidden md:block">

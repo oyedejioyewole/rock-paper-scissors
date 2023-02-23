@@ -1,0 +1,12 @@
+# Custom Dictionary Words
+headlessui
+Kazare's
+kevinmarrec
+nuxt
+nuxtjs
+Oyedeji
+Oyewole
+pinia
+playboard
+tailwindcss
+vueuse

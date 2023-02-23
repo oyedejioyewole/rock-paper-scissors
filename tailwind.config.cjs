@@ -4,15 +4,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial-at-t":
-          "radial-gradient(ellipse at top, var(--tw-gradient-stops))",
+        "radial-gradient":
+          "radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
       },
       fontFamily: {
         sans: "'Barlow Semi Condensed', sans-serif",
       },
       colors: {
-        "gradient-one": "hsl(214, 47%, 23%)",
-        "gradient-two": "hsl(237, 49%, 15%)",
         "scoreboard-outline": "hsl(217, 16%, 45%)",
         score: "hsl(229, 64%, 46%)",
         dark: "hsl(229, 25%, 31%)",
