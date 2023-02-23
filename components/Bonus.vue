@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import usePlayboardStore from "~~/store/playboard";
+import usePlayboardStore from "~/store/playboard";
 
 const {
   setUserSelection,
