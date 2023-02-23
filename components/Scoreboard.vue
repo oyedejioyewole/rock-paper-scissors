@@ -22,7 +22,8 @@ const { setGameMode, setShowResults, setScore } = usePlayboardStore();
     <NuxtLink to="/"
       ><NuxtImg
         :src="!isBonus ? `/images/logo.svg` : `/images/logo-bonus.svg`"
-        class="w-32 2xl:w-fit"
+        class="2xl:w-fit"
+        width="8rem"
         :alt="
           !isBonus
             ? `Rock, paper, scissors`

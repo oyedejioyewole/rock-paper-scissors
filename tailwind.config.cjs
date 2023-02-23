@@ -8,7 +8,7 @@ module.exports = {
           "radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
       },
       fontFamily: {
-        sans: "'Barlow Semi Condensed', sans-serif",
+        sans: "'Barlow Semi Condensed'",
       },
       colors: {
         "scoreboard-outline": "hsl(217, 16%, 45%)",

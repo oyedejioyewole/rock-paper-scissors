@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@pinia/nuxt",
     "@kevinmarrec/nuxt-pwa",
+    "nuxt-fonty",
   ],
   ssr: false,
   app: {
@@ -23,19 +24,6 @@ export default defineNuxtConfig({
           type: "image/svg+xml",
           sizes: "32x32",
           href: "/favicon.svg",
-        },
-        {
-          rel: "preconnect",
-          href: "https://api.fonts.coollabs.io",
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://api.fonts.coollabs.io/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap",
         },
       ],
       htmlAttrs: {
@@ -56,5 +44,8 @@ export default defineNuxtConfig({
     icon: {
       fileName: "favicon.svg",
     },
+  },
+  fonty: {
+    autoImport: true,
   },
 });

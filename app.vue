@@ -2,6 +2,21 @@
 import usePlayboardStore from "~/store/playboard";
 import { useStorage } from "@vueuse/core";
 
+useFont([
+  {
+    family: "Barlow Semi Condensed",
+    src: "/fonts/barlow-semi-condensed-semibold.woff2",
+    weight: "600",
+    display: "swap",
+  },
+  {
+    family: "Barlow Semi Condensed",
+    src: "/fonts/barlow-semi-condensed-bold.woff2",
+    weight: "700",
+    display: "swap",
+  },
+]);
+
 useHead({
   bodyAttrs: {
     class:
