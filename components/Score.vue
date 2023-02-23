@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import usePlayboardStore from "~/store/playboard";
 import { storeToRefs } from "pinia";
+import usePlayboardStore from "~/store/playboard";
 
 const { score } = storeToRefs(usePlayboardStore());
 </script>

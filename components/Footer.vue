@@ -1,6 +1,6 @@
 <script setup>
-import usePlayboardStore from "~/store/playboard";
 import { storeToRefs } from "pinia";
+import usePlayboardStore from "~/store/playboard";
 
 const { showResults, isBonus } = storeToRefs(usePlayboardStore());
 const { setScore, setGameMode, setShowResults } = usePlayboardStore();

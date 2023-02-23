@@ -3,11 +3,11 @@ import {
   Dialog,
   DialogPanel,
   DialogTitle,
-  TransitionRoot,
   TransitionChild,
+  TransitionRoot,
 } from "@headlessui/vue";
-import useRootStore from "~/store/playboard";
 import { storeToRefs } from "pinia";
+import useRootStore from "~/store/playboard";
 
 //==> Methods
 const toggleModal = () => useToggle(isModalOpen)();

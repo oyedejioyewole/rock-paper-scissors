@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import usePlayboardStore from "~/store/playboard";
-import { storeToRefs } from "pinia";
 import { promiseTimeout } from "@vueuse/core";
+import { storeToRefs } from "pinia";
+import usePlayboardStore from "~/store/playboard";
 
-const { computerChoice, userChoice, result, score, isBonus } = storeToRefs(
+const { computerChoice, userChoice, result, isBonus } = storeToRefs(
   usePlayboardStore()
 );
 const playboard = usePlayboardStore();
